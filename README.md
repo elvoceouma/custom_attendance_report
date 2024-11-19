@@ -44,7 +44,7 @@ requirements = {
 
 ```bash
 # Clone the repository
-git clone https://github.com/elvoceouma/custom_attendance_repor.git
+git clone https://github.com/elvoceouma/custom_attendance_report.git
 
 # Move to custom addons directory
 mv monthly_attendance_report /path/to/odoo/custom/addons/
@@ -184,9 +184,9 @@ common_issues = {
 
 ```python
 contact_info = {
-    "github": "https://github.com/your-repo/issues",
-    "email": "support@yourcompany.com",
-    "docs": "https://yourcompany.com/docs/attendance-report"
+    "github": "https://github.com/elvoceouma/custom_attendance_report/issues",
+    "email": "elviceoumaonyango@gmail.com",
+    "docs": "https://github.com/elvoceouma/custom_attendance_report/main/README.md"
 }
 ```
 
