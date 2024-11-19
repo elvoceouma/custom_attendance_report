@@ -44,7 +44,7 @@ requirements = {
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-repo/monthly_attendance_report.git
+git clone https://github.com/elvoceouma/custom_attendance_repor.git
 
 # Move to custom addons directory
 mv monthly_attendance_report /path/to/odoo/custom/addons/
