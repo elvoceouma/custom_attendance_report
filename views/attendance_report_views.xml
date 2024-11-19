@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Report Generation Wizard  -->
+    <record id="view_attendance_report_wizard_form" model="ir.ui.view">
+        <field name="name">attendance.report.wizard.form</field>
+        <field name="model">attendance.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generate Attendance Report">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="month" required="1"/>
+                            <field name="year" required="1"/>
+                        </group>
+                        <group>
+                            <field name="employee_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_generate_report" string="Generate Excel Report" type="object" class="btn-primary" data-hotkey="q"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for the Wizard -->
+    <record id="action_attendance_report_wizard" model="ir.actions.act_window">
+        <field name="name">Generate Attendance Report</field>
+        <field name="res_model">attendance.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="view_attendance_report_wizard_form"/>
+    </record>
+
+    <!-- Action for Monthly Report List View -->
+    <record id="action_hr_attendance_monthly_report" model="ir.actions.act_window">
+        <field name="name">Monthly Attendance Reports</field>
+        <field name="res_model">hr.attendance.monthly.report</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_attendance_reports" name="Attendance Reports" parent="hr_attendance.menu_hr_attendance_root" sequence="20"/>
+
+    <menuitem id="menu_attendance_report_generator" name="Generate Monthly Report" parent="menu_attendance_reports" action="action_attendance_report_wizard" sequence="1"/>
+
+    <menuitem id="menu_attendance_report_list" name="Report History" parent="menu_attendance_reports" action="action_hr_attendance_monthly_report" sequence="2"/>
+</odoo>
